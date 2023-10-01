@@ -2,7 +2,7 @@
  * 目的の値にたどるために必要な経路を配列で出力する関数
  * 目的の値がない場合はnullを返す
  */
-function getPath(
+export function getPath(
   obj: any,
   targetValue: string | number,
   path: (string | number)[] = []
@@ -27,7 +27,7 @@ function getPath(
       }
       if (typeof obj[key] === "object") {
         const result = getPath(obj[key] as any, targetValue, newPath);
-        // パスが見つかった場合、そのパスを返し、探索を終了します。
+        // パスが見つかった場合、そのパスを返し、探索を終了
         if (result) {
           return result;
         }
@@ -66,11 +66,3 @@ const obj = [
   },
   { text: "value1next", value: 114514 },
 ];
-
-// 'c'というキーへのパスを取得し、コンソールに出力します。
-console.log(getPath(obj, "value5")); // ['a', 'b', 'c']
-console.log(getPath(obj, "element4")); // ['a', 'b', 'c']
-console.log(getPath(obj, "element1")); // ['a', 'b', 'c']
-
-console.log(getPath(obj, "value1next")); // ['a', 'b', 'c']
-console.log(getPath(obj, 114514)); // ['a', 'b', 'c']
