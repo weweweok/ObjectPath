@@ -21,7 +21,7 @@ yarn add get-object-path-from-value
 Paste this snipet on you want to use this library.
 
 ```
-import { getPath } from "https://deno.land/x/getobjectpath@0.3.0/getPath.ts";
+import { getPath } from "https://deno.land/x/getobjectpath/getPath.ts";
 ```
 
 ## example
